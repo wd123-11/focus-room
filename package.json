@@ -1,0 +1,25 @@
+{
+  "name": "focus-room",
+  "version": "1.0.0",
+  "description": "多人在线专注打卡应用：创建房间、一起打卡、结束后一键分享到 QQ",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "checkin",
+    "focus",
+    "express",
+    "sqlite",
+    "nodejs"
+  ],
+  "author": "wd123-11",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "express": "^5.3.0"
+  }
+}

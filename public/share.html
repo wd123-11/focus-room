@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>打卡成果 · 专注打卡</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="share-hero">
+        <div class="share-badge">✅ 打卡成果单</div>
+        <div class="share-topic" id="shareTopic"></div>
+        <div class="share-room-code">房间号：<span id="shareCode" style="font-family:Consolas,monospace;letter-spacing:2px;font-weight:600;"></span></div>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-value" id="finishedCount">0</div>
+          <div class="stat-label">完成人数</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value" id="totalTime">0</div>
+          <div class="stat-label">总专注时长</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value" id="avgTime">0</div>
+          <div class="stat-label">人均时长</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value" id="joinCount">0</div>
+          <div class="stat-label">参与人数</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="section-title">专注排行榜</div>
+      <ul class="rank-list" id="rankList"></ul>
+    </div>
+
+    <div class="card">
+      <div class="action-area">
+        <button class="btn btn-qq btn-share" id="qqShareBtn">
+          <span>💬</span> 分享到 QQ
+        </button>
+        <button class="btn btn-outline btn-share" id="copyLinkBtn">
+          <span>🔗</span> 复制成果链接
+        </button>
+        <button class="btn btn-primary btn-share" id="joinMoreBtn">
+          <span>⏱️</span> 我也要打卡
+        </button>
+      </div>
+      <p class="tip">把成果分享给 QQ 好友，一起坚持专注</p>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="/js/share.js"></script>
+</body>
+</html>

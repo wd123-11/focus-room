@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>打卡房间 · 专注打卡</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- 未加入：填写昵称 -->
+    <div class="card join-box" id="joinBox">
+      <div class="logo" style="margin-bottom:20px;">
+        <div class="logo-icon">🚪</div>
+        <h1 style="font-size:22px;">加入打卡房间</h1>
+        <p>房间号：<span id="joinRoomCode" style="font-weight:700;letter-spacing:2px;"></span></p>
+      </div>
+      <div class="error-msg" id="joinError"></div>
+      <form id="joinRoomForm">
+        <div class="form-group">
+          <label for="joinRoomName">你的昵称</label>
+          <input type="text" id="joinRoomName" placeholder="输入昵称后加入" maxlength="20" autocomplete="off">
+        </div>
+        <button type="submit" class="btn btn-primary">加入房间</button>
+      </form>
+    </div>
+
+    <!-- 房间主体 -->
+    <div id="roomMain" class="hidden">
+      <div class="card">
+        <div class="room-header">
+          <div class="room-topic" id="roomTopic"></div>
+          <div class="room-code-box">
+            <span class="room-code-label">房间号</span>
+            <span class="room-code" id="roomCode"></span>
+            <button class="copy-btn" id="copyCodeBtn" title="复制房间号">📋</button>
+          </div>
+        </div>
+
+        <div class="my-timer" id="myTimer">
+          <div class="timer-display" id="timerDisplay">00:00:00</div>
+          <div class="timer-label" id="timerLabel">准备开始打卡</div>
+        </div>
+
+        <div class="action-area" id="actionArea">
+          <button class="btn btn-primary" id="startBtn">▶ 开始打卡</button>
+          <button class="btn btn-danger hidden" id="endBtn">⏹ 结束打卡</button>
+          <button class="btn btn-qq hidden" id="viewShareBtn">📊 查看打卡成果并分享</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="section-title">
+          打卡成员
+          <span class="member-count" id="memberCount"></span>
+        </div>
+        <ul class="member-list" id="memberList"></ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="/js/room.js"></script>
+</body>
+</html>

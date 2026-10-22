@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>专注打卡 · 多人在线自习室</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <div class="logo-icon">⏱️</div>
+      <h1>专注打卡</h1>
+      <p>和同学一起开始打卡，结束后分享学习成果</p>
+    </div>
+
+    <div class="card">
+      <div class="tabs">
+        <button class="tab active" id="tabCreate">创建打卡</button>
+        <button class="tab" id="tabJoin">加入打卡</button>
+      </div>
+
+      <div class="error-msg" id="errorMsg"></div>
+
+      <!-- 创建房间 -->
+      <form id="createForm">
+        <div class="form-group">
+          <label for="createTopic">打卡主题</label>
+          <input type="text" id="createTopic" placeholder="例如：高数期末复习" maxlength="30" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label for="createName">你的昵称</label>
+          <input type="text" id="createName" placeholder="例如：小李" maxlength="20" autocomplete="off">
+        </div>
+        <button type="submit" class="btn btn-primary">创建打卡房间</button>
+      </form>
+
+      <!-- 加入房间 -->
+      <form id="joinForm" class="hidden">
+        <div class="form-group">
+          <label for="joinCode">房间号</label>
+          <input type="text" id="joinCode" placeholder="输入 6 位房间号" maxlength="6" autocomplete="off" style="text-transform:uppercase;letter-spacing:3px;font-family:Consolas,monospace;">
+        </div>
+        <div class="form-group">
+          <label for="joinName">你的昵称</label>
+          <input type="text" id="joinName" placeholder="例如：小王" maxlength="20" autocomplete="off">
+        </div>
+        <button type="submit" class="btn btn-primary">加入打卡房间</button>
+      </form>
+    </div>
+
+    <p class="tip">打开即开始，结束即分享 · 无需持续监测</p>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="/js/home.js"></script>
+</body>
+</html>
