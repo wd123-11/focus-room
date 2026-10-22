@@ -4,7 +4,10 @@ const crypto = require('crypto');
 const Database = require('better-sqlite3');
 
 // Railway 部署时把持久化卷挂载到 /data；本地开发用项目下的 data 目录
-const dataDir = process.env.DATA_DIR || path.join(__dirname, 'data');
+let dataDir = process.env.DATA_DIR;
+if (!dataDir) {
+  dataDir = fs.existsSync('/data') ? '/data' : path.join(__dirname, 'data');
+}
 if (!fs.existsSync(dataDir)) {
   fs.mkdirSync(dataDir, { recursive: true });
 }
